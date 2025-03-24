@@ -15,7 +15,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\Users\\Robson Baterias\\Desktop\\Visual Studio\\instagram-react\\index.html"
+            "file": "c:\\Users\\Robson Baterias\\Desktop\\Visual Studio\\instagram-react\\public\\index.html"
         }
     ]
 }
