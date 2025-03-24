@@ -1,15 +1,12 @@
 import Navbar from "./Navbar";
-import Esquerda from "./Esquerda";
-import Sidebar from "./Sidebar";
+import Body from "./Body";
 
 export default function App(){ 
     return ( 
         <>
         <Navbar />
-            <div className="corpo">
-                <Esquerda />
-                <Sidebar />               
-            </div>            
+        <Body />
+        
         </>
     );
 }
