@@ -4,9 +4,8 @@ import Body from "./Body";
 export default function App(){ 
     return ( 
         <>
-        <Navbar />
-        <Body />
-        
+            <Navbar />
+            <Body />
         </>
     );
 }
