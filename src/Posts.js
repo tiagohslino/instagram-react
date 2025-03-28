@@ -49,6 +49,16 @@ export default function Posts() {
 function Post({nomeUsuario, imagemUsuario, imagemPost, altPost, nomeQuemCurtiu, imagemQuemCurtiu, curtidas}) {
 
     const curtidasFormatadas = curtidas.toLocaleString('pt-BR');
+    const [favorito, setFavorito] = React.useState(false);
+    const [like, setLike] = React.useState(false);
+    
+    function botaoFavorito(){
+        setFavorito(!favorito);
+    }
+
+    function botaoLike(){
+        setLike(!like);
+    }
 
     return (        
             <div class="post">
@@ -69,12 +79,16 @@ function Post({nomeUsuario, imagemUsuario, imagemPost, altPost, nomeQuemCurtiu, 
                 <div class="fundo">
                     <div class="acoes">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            {/* O ícone bookmark estava dando erro que não consegui resolver, 
+                            só renderizava o "-outline", por isso criei a pasta assets/icon e fiz manualmente, ok?*/}
+                            <ion-icon onClick={botaoLike} src={like ? "assets/icon/heart.svg" : "assets/icon/heart-outline.svg"} style={{ color: like ? 'red' : 'inherit' }}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
                         <div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
+
+                            {/* Aqui o mesmo do anterior! Não sei porque os ícones só funcionaram assim*/}
+                            <ion-icon onClick={botaoFavorito} src={favorito ? "assets/icon/bookmark.svg" : "assets/icon/bookmark-outline.svg"}></ion-icon>
                         </div>
                     </div>
 
