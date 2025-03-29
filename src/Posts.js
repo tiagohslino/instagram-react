@@ -48,9 +48,10 @@ export default function Posts() {
 
 function Post({nomeUsuario, imagemUsuario, imagemPost, altPost, nomeQuemCurtiu, imagemQuemCurtiu, curtidas}) {
 
-    const curtidasFormatadas = curtidas.toLocaleString('pt-BR');
+    const [numeroCurtidas, setNumeroCurtidas] = React.useState(curtidas);
     const [favorito, setFavorito] = React.useState(false);
     const [like, setLike] = React.useState(false);
+    
     
     function botaoFavorito(){
         setFavorito(!favorito);
@@ -58,7 +59,16 @@ function Post({nomeUsuario, imagemUsuario, imagemPost, altPost, nomeQuemCurtiu, 
 
     function botaoLike(){
         setLike(!like);
+        if (!like) {
+            setNumeroCurtidas(numeroCurtidas + 1);
+            console.log("Curtidas incrementadas:", numeroCurtidas, like);
+          } else {
+            setNumeroCurtidas(numeroCurtidas - 1);
+            console.log("Curtidas incrementadas:", numeroCurtidas, like);
+          }
     }
+
+    const curtidasFormatadas = numeroCurtidas.toLocaleString('pt-BR');
 
     return (        
             <div class="post">
@@ -73,7 +83,7 @@ function Post({nomeUsuario, imagemUsuario, imagemPost, altPost, nomeQuemCurtiu, 
                 </div>
 
                 <div class="conteudo">
-                <img src={imagemPost} alt={altPost}/>
+                    <img onClick={botaoLike} src={imagemPost} alt={altPost}/>
                 </div>
 
                 <div class="fundo">
@@ -95,6 +105,7 @@ function Post({nomeUsuario, imagemUsuario, imagemPost, altPost, nomeQuemCurtiu, 
                     <div class="curtidas">
                         <img src={imagemQuemCurtiu} alt={nomeQuemCurtiu}/>
                         <div class="texto">
+                            
                         Curtido por <strong>{nomeQuemCurtiu}</strong> e <strong>outras {curtidasFormatadas} pessoas</strong>
                         </div>
                     </div>

@@ -8,12 +8,16 @@ export default function User() {
 
     function mudarNome(){
         const nomeDigitado = prompt("Digite seu nome de usuario");
-        setNome(nomeDigitado);
+        if (nomeDigitado) { 
+            setNome(nomeDigitado);
+        }
     }
 
     function mudarAvatar(){
         const linkDigitado = prompt("Digite o link da sua imagem");
-        setAvatar(linkDigitado);
+        if (linkDigitado) { // Verifica se linkDigitado não é nulo ou string vazia
+            setAvatar(linkDigitado);
+        }
     }
 
     return(
