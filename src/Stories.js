@@ -1,4 +1,7 @@
 
+import React from "react";
+import Story from "./Story";
+
 export default function Stories() {
 
     const listaStories = [
@@ -29,15 +32,3 @@ export default function Stories() {
     )
 }
 
-function Story({imagem, nome}){
-    return(
-        <div class="story">
-            <div class="imagem">
-                <img src={imagem} alt={nome}/>
-            </div>
-            <div class="usuario">
-                {nome}
-            </div>
-        </div>
-    )
-}

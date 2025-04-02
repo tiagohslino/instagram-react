@@ -1,3 +1,6 @@
+import React from "react";
+import Suggestion from "./Suggestion";
+
 export default function Suggestions() {
 
     const listaSugestoes = [
@@ -29,19 +32,3 @@ export default function Suggestions() {
     );
 }
 
-function Suggestion({imagem, nome, razao}) {
-    
-    return (
-        <div class="sugestao">
-                <div class="usuario">
-                    <img src={imagem} alt={nome}/>
-                    <div class="texto">
-                        <div class="nome">{nome}</div>
-                        <div class="razao">{razao}</div>
-                    </div>
-                </div>
-
-                <div class="seguir">Seguir</div>
-            </div>
-    );
-}

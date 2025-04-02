@@ -26,7 +26,7 @@ export default function User() {
                 <div class="texto">
                     <span>
                     <strong>{nome}</strong>
-                    <ion-icon onClick={mudarNome} name="pencil"></ion-icon>
+                    <ion-icon onClick={mudarNome} src="assets/icon/pencil.svg"></ion-icon>
                     </span>
                 </div>
         </div>
